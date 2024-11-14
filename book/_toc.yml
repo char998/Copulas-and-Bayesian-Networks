@@ -6,6 +6,8 @@ parts:
     chapters:
     - file: some_content/overview.md
       sections:
+      - file: some_content/Correlation and Covariance.ipynb
+      - file: some_content/Copulas.ipynb
       - file: some_content/Bayesian Networks.ipynb
     - file: references.md
     - file: changelog.md
