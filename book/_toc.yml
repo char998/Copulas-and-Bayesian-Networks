@@ -4,13 +4,14 @@ root: intro.md
 parts:
   - caption: Contents
     chapters:
-    - file: fundamentals/opening.md
-      - file: fundamentals/Correlation and Covariance.ipynb
-      - file: fundamentals/Copulas.ipynb
-    - file: some_content/overview.md
-      title: Non-parametric Bayesian Networks
-      sections:
-      - file: opening.md
+      - file: fundamentals/opening.md
+        sections:
+          - file: fundamentals/Correlation and Covariance.ipynb
+          - file: fundamentals/Copulas.ipynb
+      - file: some_content/overview.md
+        title: Non-parametric Bayesian Networks
+        sections:
+         - file: opening.md
     # - file: references.md
     # - file: changelog.md
     # - file: credits.md
