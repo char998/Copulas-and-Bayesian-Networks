@@ -5,9 +5,10 @@ parts:
   - caption: Contents
     chapters:
       - file: fundamentals/opening.md
+        title: Fundamentals
         sections:
           - file: fundamentals/Correlation and Covariance.ipynb
-          - file: fundamentals/Copulas.ipynb
+          # - file: fundamentals/Copulas.ipynb
       - file: some_content/overview.md
         title: Non-parametric Bayesian Networks
         sections:
