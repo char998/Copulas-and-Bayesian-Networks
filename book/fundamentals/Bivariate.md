@@ -39,7 +39,7 @@ Lets now think of an example. Consider the discharge of two rivers that are loca
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
 
 
-In the figure below, you have the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$. 
+In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$. 
 
 ```{figure} ../figures/gaussian_rivers_pdf_cdf.png
 
