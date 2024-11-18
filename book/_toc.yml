@@ -9,6 +9,7 @@ parts:
         sections:
           - file: fundamentals/Correlation and Covariance.ipynb
           - file: fundamentals/Copulas.ipynb
+          - file: fundamentals/Bivariate.md
       - file: NPBN/opening.md
         title: Non-parametric Bayesian Networks
         sections:
