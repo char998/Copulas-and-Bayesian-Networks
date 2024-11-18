@@ -1,7 +1,7 @@
 
 # Multivariate Gaussian distribution
 
-One of the simplest approaches we have to define a multivariate distribution, $F(x, y)$, is through the multivariate Gaussian distribution. This model assumes that both the marginals and the dependence are Gaussian. Keep in mind that the Gaussian distribution is not always the best model so the applicability of the multivariate Gaussian is limited. However, it is a convenient model since it can be manipulated analytically and we can use it as a first approach to model the dependence. 
+One of the simplest approaches to define a multivariate distribution, $F(x, y)$, is through the multivariate Gaussian distribution. This model assumes that both the marginals and the dependence are Gaussian. Keep in mind that the Gaussian distribution is not always the best model so the applicability of the multivariate Gaussian is limited. However, it is a convenient model since it can be manipulated analytically and we can use it as a first approach to model the dependence. 
 
 ## Definition of bivariate Gaussian distribution
 The bivariate Gaussian distribution for two random variables $X_1$ and $X_2$ is defined as
@@ -41,7 +41,7 @@ Lets now think of an example. Consider the discharge of two rivers that are loca
 
 In the figure below, you have the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$. 
 
-```{figure} ./figures/gaussian_rivers_pdf_cdf.png
+```{figure} .book/figures/gaussian_rivers_pdf_cdf.png
 
 ---
 
