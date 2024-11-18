@@ -90,7 +90,7 @@ $$
 
 The figure below displays the difference between the univariate distribution of $Q_1$ and the conditional distribution of $Q_1$ given $q_2 = 100 m^3/s$.
 
-```{figure} ./figures/cond_and_uncond.png
+```{figure} ../figures/cond_and_uncond.png
 
 ---
 
@@ -132,7 +132,7 @@ $$
 
 We can see that the means of the random variables $Q_1$ and $Q_2$ have increased while $Cov(Q_1, Q_2)$ has been reduced from 1000 to 661.2. The figure below displays the difference between the univariate distributions of $Q_1$ and $Q_2$ without and with conditionalizing.
 
-```{figure} ./figures/two_conditionals_gaussian.png
+```{figure} ../figures/two_conditionals_gaussian.png
 
 ---
 
@@ -142,7 +142,7 @@ Unconditional and conditional Gaussian distributions given $P$: (left) $Q_1$, an
 
 We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing.
 
-```{figure} ./figures/3D_conditional.png
+```{figure} ../figures/3D_conditional.png
 
 ---
 
