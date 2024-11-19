@@ -23,4 +23,3 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    if: github.ref == 'refs/heads/main'
