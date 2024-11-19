@@ -11,7 +11,7 @@ In order to assess the streght of the dependence in these complex relationships 
 Covariance is a measure of the joint variability of two variables. The definition of Covariance is given by
 
 $$
-\text{Cov}(X_1, X_2) = \mathbb{E}[(X_1 - \mathbb{E}(X_1))(X_2 - \mathbb{E}(X_2))] = \mathbb{E}(X_1 X_2)-\mathbb{E}(X_1)\mathbb{E}(X_2)
+\text{Cov}(X_1, X_2) = \mathbb{E}[(X_{1,i} - \mathbb{E}(X_1))(X_{2,i} - \mathbb{E}(X_2))] = \mathbb{E}(X_1 X_2)-\mathbb{E}(X_1)\mathbb{E}(X_2)
 $$
 
 The covariance of two random variables can take both positive and negative values and has units equal to the product of the units of the analyzed variables. High absolute values of covariance imply a strong relationship between variables.
@@ -23,20 +23,28 @@ On the other hand, if $Cov(X_1,X_2)<0$, high values of $X_1$ typically occur tog
 Note that the covariance of one variable with itself is equal to the variance.
 
 $$
-Cov(X,X)=\mathbb{E}([X_i-\mathbb{E}(X_i)]^2) =\sigma^2_{X}
+Cov(X,X)=\mathbb{E}([X_i-\mathbb{E}(X)]^2) =\sigma^2_{X}
 $$
 
 ## Covariance: geometric interpretation
 
-Imagine that I am studying the relationship between the height and the Body Mass Index ($BMI$) of people. I have a short dataset that it is shown as a scatter plot in the image below.
+In this section, we will see how to interpret the covariance as an average of geometric areas. Let's see it with an example. Imagine that you are studying the relationship between the height and the Body Mass Index ($BMI$) of people. You have a short dataset with 20 observations that it is shown as a scatter plot in panel (a) of the image below.
 
 ```{figure} ../figures/obs_geom.png
 
 ---
 
 ---
-Geometric interpretation of the covariance: (a) paired observations of height and BMI, and (b) rectangular areas defined by the observations and the mean values of the two random variables, which represent $X_i-E(X)$.
+Geometric interpretation of the covariance: (a) paired observations of height and BMI, and (b) rectangular areas defined by the observations and the mean values of the two random variables, which represent $[X_{1,i}-\mathbb{E}(X_1)][X_{2,i}-\mathbb{E}(X_2)]$.
 ```
+
+We already introduced the definition of covariance as
+
+$$
+\text{Cov}(X_1, X_2) = \mathbb{E}[(X_{1,i} - \mathbb{E}(X_1))(X_{2,i} - \mathbb{E}(X_2))]
+$$
+
+In that expression, we can see that the covariance is the expectation of a product of two terms. Each of these terms represents the difference between an observation and the expected value of the random variable (i.e., its mean). Therefore, it can be interpreted as the rectangular area defined by the distances of each observation to the mean values of the two random variables. This is, the areas of the rectangles defined in the panel (b) of the Figure above.
 
 ## Covariance matrix
 
