@@ -39,8 +39,9 @@ Lets now think of an example. Consider the discharge of two rivers,$Q_{1}$ and $
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
 
 
-In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$ (remember the relation between correlation and covariance). //
-<br>
+In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$ (remember the relation between correlation and covariance).
+
+<br><br>
 
 ```{figure} ../figures/gaussian_rivers_pdf_cdf.png
 
@@ -49,7 +50,7 @@ In the figure below, you can observe the PDF and CDF of a bivariate Gaussian dis
 ---
 Bivariate Gaussian distribution: (left) probability density function, and (right) cumulative distribution function.
 ```
-
+<br>
 ## Conditionalizing a bivariate Gaussian distribution
 
 Multivariate Gaussian distributions are useful because we can derive results analytically. Here, we are going to conditionalize a bivariate Gaussian distribution to exemplify it.
