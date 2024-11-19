@@ -148,14 +148,14 @@ Unconditional and conditional Gaussian distributions given $P$: (left) $Q_1$, an
 
 <br>
 
-We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing. The arrows show the direction to which the joint probability decreases.
+We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing. 
 
 ```{figure} ../figures/joint_prob_conditional.png
 
 ---
 
 ---
-Unconditional and conditional bivariate Gaussian distributions for $Q_1$ and $Q_2$. Same density contours are plotted for both distributions.
+Unconditional and conditional bivariate Gaussian distributions for $Q_1$ and $Q_2$. Same density contours are plotted for both distributions. The arrows show the direction to which the joint probability decreases.
 ```
 
 ## Extra material: a video
@@ -168,4 +168,4 @@ If you need to refresh the concept of covariance and correlation and want to see
    <iframe width="560" height="315" src="https://youtube.com/embed/zyXp_oysuW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-[^note]: You can check the definition of covariance [here](..\Correlation_and_Covariance.md).
+[^note]: You can check the definition of covariance [here](Correlation_and_Covariance.md###Covariance).
