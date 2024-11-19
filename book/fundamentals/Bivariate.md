@@ -15,7 +15,7 @@ where $x_1$ and $x_2$ are values of the random variables, $\sigma_1$ and $\sigma
 We can rewrite the above expression in matricial form as
 
 $$
-\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 \begin{vmatrix} \sigma_1^2 \ \ \ \ Cov(X_1, X_2) \\ Cov(X_1, X_2) \ \ \sigma_2^2 \\ \end{vmatrix}}} \exp \left( (x_1 - \mu_1 \ x_2-\mu_2) \begin{pmatrix} \sigma_1^2 \ \ \ Cov(X_1, X_2) \\ Cov(X_1, X_2) \ \ \ \sigma_2^2 \end{pmatrix} \begin{pmatrix} x_1 - \mu_1 \\ x_2 - \mu_2 \end{pmatrix} \right)
+\phi_{\rho}(x_1, x_2) = \frac{1}{\sqrt{(2\pi)^2 \begin{vmatrix} \sigma_1^2 \ \ \ \ Cov(X_1, X_2) \\ Cov(X_1, X_2)  \ \ \sigma_2^2 \\ \end{vmatrix}}} \exp -\frac{1}{2}\left( (x_1 - \mu_1 \ x_2-\mu_2) \begin{pmatrix} \sigma_1^2 \ \ \ Cov(X_1, X_2) \\ Cov(X_1, X_2) \ \ \ \sigma_2^2 \end{pmatrix}^{-1} \begin{pmatrix} x_1 - \mu_1 \\ x_2 - \mu_2 \end{pmatrix} \right)
 $$
 
 where $Cov(X_1, X_2)$ is the covariance of the random variables $X_1$ and $X_2$. We can also present the above form in a compressed fashion as
@@ -36,8 +36,11 @@ Note that when talking about the Gaussian distribution instead of using $F_{X_1,
 
 Lets now think of an example. Consider the discharge of two rivers,$Q_{1}$ and $Q_{2}$, that are located in the same watershed, which will serve as our two random variables. Since the rivers are located in the same watershed, it is relatively safe to assume that their discharges are correlated. You can play with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
 
+<br>
+
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
 
+<br>
 
 In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$ (remember the relation between correlation and covariance).
 
@@ -51,6 +54,7 @@ In the figure below, you can observe the PDF and CDF of a bivariate Gaussian dis
 Bivariate Gaussian distribution: (left) probability density function, and (right) cumulative distribution function.
 ```
 <br>
+
 ## Conditionalizing a bivariate Gaussian distribution
 
 Multivariate Gaussian distributions are useful because we can derive results analytically. Here, we are going to conditionalize a bivariate Gaussian distribution to exemplify it.
@@ -142,9 +146,11 @@ We can see that the means of the random variables $Q_1$ and $Q_2$ have increased
 Unconditional and conditional Gaussian distributions given $P$: (left) $Q_1$, and (right) $Q_2$.
 ```
 
-We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing.
+<br>
 
-```{figure} ../figures/3D_conditional.png
+We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing. The arrows show the direction to which the joint probability decreases.
+
+```{figure} ../figures/joint_prob_conditional.png
 
 ---
 
@@ -162,4 +168,4 @@ If you need to refresh the concept of covariance and correlation and want to see
    <iframe width="560" height="315" src="https://youtube.com/embed/zyXp_oysuW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-[^note]: You already studied covariance matrices [here](correl).
+[^note]: You can check the definition of covariance [here](..\Correlation_and_Covariance.md).
