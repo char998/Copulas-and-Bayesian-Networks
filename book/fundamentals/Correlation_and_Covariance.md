@@ -22,6 +22,18 @@ $$
 Cov(X_i,X_i)=\mathbb{E}([X_i-\mathbb{E}(X_i)]^2) =\sigma^2_i
 $$
 
+### Covariance matrix
+
+When considering a random vector $X= [\begin{array}{llll} X_1 & X_2 & \ldots &X_m \end{array}]^T$, we can 'collect' all covariances in the so-called *covariance matrix*:
+
+$$
+\Sigma_X=  \left[\begin{array}{cccc} \sigma^2_1 & Cov(X_1,X_2) & \ldots & Cov(X_1,X_m) \\ Cov(X_1,X_2)& \sigma_{2}^2 & \ldots & Cov(X_2,X_m) \\\vdots & \vdots & \ddots & \vdots \\ Cov(X_1,X_m) & Cov(X_2,X_m) & \ldots & \sigma_{m}^2 \end{array}\right]
+$$
+
+Note that the covariance matrix is symmetric, since $Cov(X_i,X_j)= Cov(X_j,X_i)$. 
+
+If all measurements are independent, all covariances will be equal to zero, and the covariance matrix becomes a diagonal matrix with the variances on the diagonal. 
+
 ### Correlation
 
 A simple way to assess statistically whether two variables are related is their (linear) correlation, which describes how change in respect to one another. One of the most popular ways to calculate the correlation is the Pearson correlation r:
