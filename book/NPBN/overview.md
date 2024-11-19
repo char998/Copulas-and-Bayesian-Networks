@@ -11,4 +11,4 @@ Dependent relationships can be quantified using _multivariate probability distri
 
 You have also seen that when the problem can be reduced to two random variables, bivariate copulas are capable of modelling their joint distribution. However, copulas in higher dimensions are not that convenient and different models need to be applied. Here, we will focus on models that combine bivariate copulas with graph theory to build _multivariate joint distributions_ in more than two dimensions. Specifically, this chapter is focus on non-parametric Bayesian Networks (NPBN), also named Gaussian copula-based Bayesian Networks.
 
-Before you go further in this chapter, you can revisit some pre-knowledge concepts in the chapter [Fundamentals](), specifically the concepts of [covariance and correlation](covar) and the [multivariate Gaussian distribution](toadd).
+Before you go further in this chapter, you can revisit some pre-knowledge concepts in the chapter [Fundamentals](fund), specifically the concepts of [covariance and correlation](covar) and the [multivariate Gaussian distribution](toadd).
