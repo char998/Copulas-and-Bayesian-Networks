@@ -1,7 +1,7 @@
 
 # Multivariate Gaussian distribution
 
-One of the simplest approaches to define a multivariate distribution, $F(X_{1}, X_{2}..,X_{n})$, is through the multivariate Gaussian distribution. This model assumes that both the marginals and the dependence are Gaussian. Keep in mind that the Gaussian distribution is not always the best model so the applicability of the multivariate Gaussian is limited. However, it is a convenient model since it can be manipulated analytically and we can use it as a first approach to model the dependence. Here emphasis is given in the simplest case of the multivariate Gaussian distribution, which the bivariate distribution, so it is easier to visualize the concepts explained. The concepts explained though can be applied to all Multivariate Gaussian distributions.
+One of the simplest approaches to define a multivariate distribution, $F(X_{1}, X_{2}..,X_{n})$, is through the multivariate Gaussian distribution. This model assumes that both the marginals and the dependence are Gaussian. Keep in mind that the Gaussian distribution is not always the best model so the applicability of the multivariate Gaussian is limited. However, it is a convenient model since it can be manipulated analytically and we can use it as a first approach to model the dependence. Here emphasis is given in the simplest case of the multivariate Gaussian distribution, which is the bivariate distribution, so it is easier to visualize the concepts explained. The concepts explained though can be applied to all Multivariate Gaussian distributions.
 
 ## Definition of bivariate Gaussian distribution
 The bivariate Gaussian distribution for two random variables $X_1$ and $X_2$ is defined as
@@ -34,12 +34,13 @@ $$
 
 Note that when talking about the Gaussian distribution instead of using $F_{X_1,X_2}(x_1,x_2)$, we use $\Phi_{X_1,X_2}(x_1,x_2)$, but it means the same!
 
-Lets now think of an example. Consider the discharge of two rivers that are located in the same watershed, $Q_{1}$ and $Q_{2}$, which will serve as our two random variables. Since the rivers are located in the same watershed, it is relatively safe to assume that their discharges are correlated. You can play with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
+Lets now think of an example. Consider the discharge of two rivers,$Q_{1}$ and $Q_{2}$, that are located in the same watershed, which will serve as our two random variables. Since the rivers are located in the same watershed, it is relatively safe to assume that their discharges are correlated. You can play with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
 
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
 
 
-In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$. 
+In the figure below, you can observe the PDF and CDF of a bivariate Gaussian distribution for a correlation coefficient $\rho=0.77$ (remember the relation between correlation and covariance). //
+<br>
 
 ```{figure} ../figures/gaussian_rivers_pdf_cdf.png
 
