@@ -168,4 +168,4 @@ If you need to refresh the concept of covariance and correlation and want to see
    <iframe width="560" height="315" src="https://youtube.com/embed/zyXp_oysuW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-[^note]: You can check the definition of covariance [here](Correlation_and_Covariance.md###Covariance-matrix).
+[^note]: You can check the definition of covariance [here](Correlation_and_Covariance.md#Covariance-matrix).
