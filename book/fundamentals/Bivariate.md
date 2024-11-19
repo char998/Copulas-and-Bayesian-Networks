@@ -73,7 +73,8 @@ $$
 
 where $a$ is the known value of $X_2$ and $\boldsymbol{\Sigma}=\begin{pmatrix} \Sigma_{11} \ \Sigma_{12} \\ \Sigma_{21} \ \Sigma_{22} \end{pmatrix}$.
 
-Let's go now back to the example of the discharges of two neighboring rivers, $Q_1$ and $Q_2$. We have historical measurements for both discharges and we want to apply a bivariate Gaussian distribution to model their joint distribution. Using the historical dataset, we can compute their mean values, $\mu_1=94 m^3/s$ and $\mu_2=78 m^3/s$, their standard deviations, $\sigma_1= 41 m^3/s$ and $\sigma_2=35 m^3/s$, and the covariance between them, $Cov(Q_1, Q_2)=1000 (m^3/s)^2$. We know that $q_2=100 m^3/s$. What is then the expected distribution for $Q_1$? This is, we want to compute $(q_1|q_2=100m^3/s)\sim N(\hat{\mu}, \hat{\Sigma})$.
+Let’s go now back to the example of the discharges of two neighboring rivers, $Q_{1}$ and $Q_{2}$.
+We have historical measurements for both discharges and we want to apply a bivariate Gaussian distribution to model their joint distribution. Using the historical dataset, we can compute their mean values, $\mu_1=94 m^3/s$ and $\mu_2=78 m^3/s$, their standard deviations, $\sigma_1= 41 m^3/s$ and $\sigma_2=35 m^3/s$, and the covariance between them, $Cov(Q_1, Q_2)=1000 (m^3/s)^2$. We know that $q_2=100 m^3/s$. What is then the expected distribution for $Q_1$? This is, we want to compute $(q_1|q_2=100m^3/s)\sim N(\hat{\mu}, \hat{\Sigma})$.
 
 We can summarize the above information as
 
@@ -169,3 +170,32 @@ If you need to refresh the concept of covariance and correlation and want to see
 ```
 
 [^note]: You can check the definition of covariance [here](Correlation_and_Covariance.md#Covariance-matrix).
+
+:::{card} Exercise conditional ditributions
+
+Most probably you are riding a bike everyday. You can also, most probably, imagine that your bike parts will not live infinitely and some point something will fail. What can also happen is that something, like the chain, fails and something connected to that subsequently also fails, like rear cassette. Lets now say that the companies that design these parts say that the mean hours of riding after which the chain fails are $m_{chain} = 1700$ with $std_{chain} = 600$ hours and $m_{cassette} = 1300$ with $std_{cassette} = 850$ hours. After trials, we find that the covariance of failure hours for that combination of chain and cassette model is $cov_{chain,cassette} = 336000$ hours$^2$.
+
+This is of course if you are cleaning the bike regularly, which we can agree is not the case usually. Lets say that the mean of cleaning days in a year is $m_clean = 12$ and $std_clean = 6.3$ days. You also happen to know the covariances $Cov_{clean,chain} =  2835$ and $Cov_{clean,cassette} = 3748.5$.  If the failing hours of the part after use as well as the cleaning days per year are gaussian distributions, calculate the conditional bivariate distribution of chain and cassette failing hours if a bike is cleaned only 7 times per year.
+
+
+```{admonition} Solution
+:class: tip, dropdown
+Initial distribution:
+
+$$
+\boldsymbol{\mu} = \begin{pmatrix}  1700 \\ 1300 \\ 12 \end{pmatrix}
+$$
+
+$$
+\boldsymbol{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \  2835 \\ 336000 \ 850^2 \  3748.5\\  2835 \  3748.5 \ 6.3^2\end{pmatrix}$$
+
+After we conditionalize:
+$$
+\hat{\mu} = \begin{pmatrix} 1700 \\ 1300 \end{pmatrix} + \begin{pmatrix}  2835 \\ 3748.5 \end{pmatrix} (6.3^2)^{-1} (7 - 12) = \begin{pmatrix} 1342.6 \\ 827.8 \end{pmatrix} 
+$$
+
+$$
+\hat{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 2835 \\  3748.5 \ \end{pmatrix} (6.3^2)^{-1} \begin{pmatrix} 2835 \ 3748.5\end{pmatrix} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 202500 \ 267750 \\ 267750 \ 354025 \end{pmatrix} = \begin{pmatrix} 157500 \ 92250 \\ 92250 \  368475 \end{pmatrix}
+$$
+```
+:::
