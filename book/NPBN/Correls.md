@@ -105,6 +105,12 @@ Assign the appropriate (un)conditional rank correlations to the DAG in the Figur
 Assign the appropriate correlations.
 ```
 
-The solution to practice is coming.
+```{admonition} Solution
+:class: tip, dropdown
+
+Use the multivariate Gaussian distribution implemented in Scipy.stats to plot the density contours of the conditional and unconditional bivariate distributions. How has the distribution changed?
+```
+
+.
 
 [^hanea]: Hanea, A., Morales-Napoles, O., Ababei, D. (2015). Non-parametric Bayesian networks: Improving theory and reviewing applications. Reliability Engineering & System Safety 144, 265-284, https://doi.org/10.1016/j.ress.2015.07.027.
