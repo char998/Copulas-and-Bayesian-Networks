@@ -169,11 +169,11 @@ If you need to refresh the concept of covariance and correlation and want to see
    <iframe width="560" height="315" src="https://youtube.com/embed/zyXp_oysuW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
- <br><br><br>
+ <br><br>
 
 [^note]: You can check the definition of covariance [here](Correlation_and_Covariance.md#Covariance-matrix).
 
- <br><br><br>
+ <br><br>
 
 :::{card} Exercise: Keep your bike chain clean
 
@@ -196,6 +196,7 @@ $$
 \boldsymbol{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \  2835 \\ 336000 \ 850^2 \  3748.5\\  2835 \  3748.5 \ 6.3^2\end{pmatrix}$$
 
 After we conditionalize $T_{clean}$ = 7 days:
+
 $$
 \hat{\mu} = \begin{pmatrix} 1700 \\ 1300 \end{pmatrix} + \begin{pmatrix}  2835 \\ 3748.5 \end{pmatrix} (6.3^2)^{-1} (7 - 12) = \begin{pmatrix} 1342.6 \\ 827.8 \end{pmatrix} 
 $$

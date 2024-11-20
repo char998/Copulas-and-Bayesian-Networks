@@ -8,7 +8,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  favicon : "Logos/Logo_new.png"
+  favicon : "Logos/Logo_new_bigger.png"
   baseurl :  "https://char998.github.io/Copulas-and-Bayesian-Networks/main" #Replace this with your own URL
 
 sphinx:
