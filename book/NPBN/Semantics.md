@@ -42,9 +42,35 @@ Consider that each node $i$ represents a variable $X_i$. $Pa(i)={i_1, ..., i_{p(
 $$
     \begin{cases}
       r_{i,i_{p(i)}} & \text{$k=0$}\\
-      r_{i,i_{p(i)-k}|i_{p(i)}-k+1} & \text{$1 \leq k \leq p(i)-1$}\\
+      r_{i,i_{p(i)-k}|i_{p(i)},...,i_{p(i)}-k+1} & \text{$1 \leq k \leq p(i)-1$}\\
     \end{cases}       
 $$
+
+Note that ordering is not unique!
+
+Let's see how we assign conditional and unconditional rank correlations with an example. Imagine we want to assign the appropriate rank correlations to the DAG in the figure below. We start identifying the partners of each node. The nodes $X_1$, $X_2$ and $X_3$ do not have any parents. $X_4$ has as parents $X_1$, $X_2$ and $X_3$ so $Pa(4)=\{1, 2, 3\}$.
+
+```{figure} ../figures/rank_corr_DAG_empty.png
+
+---
+
+---
+Example DAG to assign (un)conditional rank correlations in the arcs.
+```
+
+Following the previous assignment rule, we start assigning $r_{34}$ ($k=0$) to the arc $3 \to 4$. Next, for $k=1$, we assign $r_{42|3}$ in the arc $2 \to 4$. Finally, for $k=3$, we assign $r_{41|3,2}$ in the arc $1 \to 4$.
+
+It should be noted that we could have started by other nodes or follow a different order, leading to a different assignment of (un)conditional rank correlations in the arcs and, thus, different non-parametric Bayesian Networks. Although the final joint distribution is slightly different, differences are usually not significant.
+
+In the figure below, the assignment of (un)conditional rank correlations is shown for three different orderings. Note that even more ordering options are possible.
+
+```{figure} ../figures/rank_corr_DAG.png
+
+---
+
+---
+Examples of (un)conditional rank correlations assigned to the arcs of a DAG with different orderings.
+```
 
 This assignment of (conditional) rank correlations for $i=1,...,n$ results in associating a rank correlation to each arc between parent and child. The following theorem from Hanea et al. (2015)[^hanea] shows that these assignments are independent and uniquely determine the joint distribution for a particular choice of copulae.
 
@@ -66,10 +92,6 @@ $$
 :::
 
 The fact that the rank correlations are algebraically independent is needed to guarantee that the joint distribution of the $n$ variables exists and is uniquely determined.
-
-Let's see how we assign conditional and unconditional rank correlations with an example.
-
-
 
 ## Semantics of DAGs
 
