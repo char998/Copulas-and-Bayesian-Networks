@@ -1,3 +1,4 @@
+(fund)=
 # Fundamentals
 
 In this section, you will find some of the concepts needed to start your journey with non-parametric Bayesian Networks. Specifically, you can find:

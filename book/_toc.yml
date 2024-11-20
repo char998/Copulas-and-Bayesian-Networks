@@ -14,6 +14,7 @@ parts:
         title: Non-parametric Bayesian Networks
         sections:
          - file: opening.md
+         - file: definition.md
     # - file: references.md
     # - file: changelog.md
     # - file: credits.md
