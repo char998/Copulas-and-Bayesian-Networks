@@ -108,7 +108,10 @@ Assign the appropriate correlations.
 ```{admonition} Solution
 :class: tip, dropdown
 
-Use the multivariate Gaussian distribution implemented in Scipy.stats to plot the density contours of the conditional and unconditional bivariate distributions. How has the distribution changed?
+Here the solution for one ordering is provided. Note that this is not the only possible solution.
+
+![solution](../figures/Assigned_ranks.png)
+
 ```
 
 .
