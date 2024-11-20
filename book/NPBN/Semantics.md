@@ -46,22 +46,33 @@ $$
     \end{cases}       
 $$
 
-This assignment of (conditional) rank correlations for $i=1,...,n$ results in associating a rank correlation to each arc between parent and child. The following theorem from \cite{HANEA2015} shows that these assignments are independent and uniquely determine the joint distribution for a particular choice of copulae.
+This assignment of (conditional) rank correlations for $i=1,...,n$ results in associating a rank correlation to each arc between parent and child. The following theorem from Hanea et al. (2015)[^hanea] shows that these assignments are independent and uniquely determine the joint distribution for a particular choice of copulae.
 
-\
+:::{card} Theorem
 
-\textbf{Theorem 1.} \cite{HANEA2015} \label{theorem}Given:
-\textit{
-\begin{enumerate}
-    \item a directed acyclic graph with n nodes specifying conditional independence relationships in an BN;
-    \item n variables $X_1, ..., X_n$ assigned to the nodes, with invertible distribution functions $F_1, ..., F_n$;
-    \item the specification (\ref{eq:correl_theorem}), $i=1,...n$, of (conditional) rank correlations on the arcs of the BN;
-    \item any copula realizing all correlations [-1,1];
-    \item the (conditional) independent copula realizing all (conditional) independence relationships encoded by the graph of the BN;
-\end{enumerate}}
+Given:
+-  a directed acyclic graph with n nodes specifying conditional independence relationships in an BN;
+-  n variables $X_1, ..., X_n$ assigned to the nodes, with invertible distribution functions $F_1, ..., F_n$;
+-  the specification (\ref{eq:correl_theorem}), $i=1,...n$, of (conditional) rank correlations on the arcs of the BN;
+-  any copula realizing all correlations [-1,1];
+-  the (conditional) independent copula realizing all (conditional) independence relationships encoded by the graph of the BN;
 
-\textit{the joint distribution of the $n$ variables is uniquely determined. This joint distribution satisfies the characteristic factorization (\ref{eq:density_theorem}) and the conditional rank correlations in (\ref{eq:correl_theorem}) are algebraically independent.}
+the joint distribution of the $n$ variables is uniquely determined. This joint distribution satisfies the conditional rank correlations in the above expression are _algebraically independent_ and the characteristic factorization given by
+
+$$
+f_{1,...,n}(x_1,..., x_n) =  f_1(x_1)\prod_{i=2}^n f_{i|Pa(i)}(x_i|x_{Pa(i)})
+$$
+
+:::
+
+The fact that the rank correlations are algebraically independent is needed to guarantee that the joint distribution of the $n$ variables exists and is uniquely determined.
+
+Let's see how we assign conditional and unconditional rank correlations with an example.
+
+
 
 ## Semantics of DAGs
 
 Note that since the dependence between each bivariate pair is modelled using a bivariate Gaussian copula, NPBN have the intrinsic limitations of this copula family. Gaussian copulas are symmetric models which cannot model tail dependence. Therefore, **NPBN do not account for tail dependence too.
+
+[^hanea]: Hanea, A., Morales-Napoles, O., Ababei, D. (2015). Non-parametric Bayesian networks: Improving theory and reviewing applications. Reliability Engineering & System Safety 144, 265-284, https://doi.org/10.1016/j.ress.2015.07.027.
