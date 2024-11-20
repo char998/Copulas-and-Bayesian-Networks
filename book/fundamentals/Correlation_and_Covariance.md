@@ -1,3 +1,4 @@
+(cov)=
 # Covariance and Correlation
 
 In many engineering and scientific applications, there are multiple variables involved. For instance, in structural engineering when assessing the health of a structure, we might have to take into account the different loads on the structure as well as the deterioration of the building materials. In climate science, when trying to study the effect of climate change in agricultural production, we might have to consider the impact of the changes in temperature, soil moisture and precipitation, amongst others, in vegetation. 
@@ -56,7 +57,7 @@ Geometric interpretation of the covariance: (a) some of the areas that represent
 
 ## Covariance matrix
 
-When considering a random vector $X= [\begin{array}{llll} X_1 & X_2 & \ldots &X_m \end{array}]^T$, we can 'collect' all covariances in the so-called *covariance matrix*:
+When considering a set of random variables, $X_1, X_2, \ldots, X_m$, we can 'collect' all covariances in the so-called *covariance matrix*:
 
 $$
 \Sigma_X=  \left[\begin{array}{cccc} \sigma^2_1 & Cov(X_1,X_2) & \ldots & Cov(X_1,X_m) \\ Cov(X_1,X_2)& \sigma_{2}^2 & \ldots & Cov(X_2,X_m) \\\vdots & \vdots & \ddots & \vdots \\ Cov(X_1,X_m) & Cov(X_2,X_m) & \ldots & \sigma_{m}^2 \end{array}\right]
@@ -66,25 +67,30 @@ Note that the covariance matrix is symmetric, since $Cov(X_i,X_j)= Cov(X_j,X_i)$
 
 If all measurements are independent, all covariances will be equal to zero, and the covariance matrix becomes a diagonal matrix with the variances on the diagonal. 
 
+You will later use the covariance matrix when working with the [multivariate Gaussian distribution](multi).
+
 ### Correlation
 
-A simple way to assess statistically whether two variables are related is their (linear) correlation, which describes how change in respect to one another. One of the most popular ways to calculate the correlation is the Pearson correlation r:
+A drawback of the covariance is that it has units. In some situations, it is desirable to compare the stregth of the joint association between different pairs of random variables that do not necessarily have the same units. In those ocasions, correlation coefficients can be applied.
+
+Pearson's correlation coefficient is the most widely used correlation coefficient as it assesses the linear correlation between two random variables. Pearson's correlation coeficient is defined as
 
 $$
-\rho = \frac{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})(X_{2i} - \bar{X_2})}{\sqrt{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})^2 \sum_{i=1}^{n} (X_{2i} - \bar{X_2})^2}}
+\rho = \frac{Cov(X_1, X_2)}{\sigma_{X_1}\sigma_{X_2}}=\frac{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})(X_{2i} - \bar{X_2})}{\sqrt{\sum_{i=1}^{n} (X_{1i} - \bar{X_1})^2 \sum_{i=1}^{n} (X_{2i} - \bar{X_2})^2}}
 $$
 
-Where:
-- $X_{1i}$ and  $X_{2i}$ are the individual data points,
-- $\bar{X_1}$ and $\bar{X_2}$ are the means of $X_1$ and $X_2$,
-- $n$ is the number of data points.
+where $X_{1i}$ and  $X_{2i}$ are the individual data points for the random variables $X_1$ and $X_2$, respectively, $\bar{X_1}$ and $\bar{X_2}$ are the means of $X_1$ and $X_2$, and $n$ is the number of data points.
 
-Pearson correlation is also related to covariance as
+The correlation coefficient takes values between -1 and 1, regardless the units of the random variables. If the random variables are uncorrelated or _independent_, $\rho=0$. A positive correlation coefficient means that if one variable increases, the other one tends to increase. Conversely, a negative correlation means that an increase of one variable is accompanied by a tendency of the other variable to decrease. If the random variables are fully correlated ($\rho=1$ or $\rho=-1$), it means that knowing the value of one variable implies that I know the value of the other variable being the relationship between them linear. In the figure below, you can see examples of how the samples for different correlation look.
 
-$$ 
-\rho(X_1,X_2)=\frac{Cov(X_1, X_2)}{\sigma_{X_1} \sigma_{X_2}} 
-$$ 
+```{figure} ../figures/correl_coef.png
 
-In the plot below you can see and try how the values of $X_1$ and $X_2$ vary together given their correlation. 
+---
+
+---
+Scatter plots for different values or Pearson's correlation coefficient.
+```
+
+You can also play with the samples option in the interactive element below.
 
 <iframe src="../_static/elements/element_correlation.html" width="600" height="400" frameborder="0"></iframe>
