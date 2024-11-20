@@ -95,6 +95,8 @@ The fact that the rank correlations are algebraically independent is needed to g
 
 ## It's your turn now!
 
+Assign the appropriate (un)conditional rank correlations to the DAG in the Figure below.
+
 ```{figure} ../figures/non_Assigned_ranks.png
 
 ---
@@ -103,6 +105,6 @@ The fact that the rank correlations are algebraically independent is needed to g
 Assign the appropriate correlations.
 ```
 
-An exercise to practice is coming.
+The solution to practice is coming.
 
 [^hanea]: Hanea, A., Morales-Napoles, O., Ababei, D. (2015). Non-parametric Bayesian networks: Improving theory and reviewing applications. Reliability Engineering & System Safety 144, 265-284, https://doi.org/10.1016/j.ress.2015.07.027.
