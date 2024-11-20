@@ -14,7 +14,9 @@ parts:
         title: Non-parametric Bayesian Networks
         sections:
          - file: NPBN/definition.md
-         - file: NPBN/Semantics.md
+           title: Definition
+         - file: NPBN/Correls.md
+           title: Correlations in NPBNs
     # - file: references.md
     # - file: changelog.md
     # - file: credits.md

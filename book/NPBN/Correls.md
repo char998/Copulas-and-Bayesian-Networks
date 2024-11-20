@@ -1,5 +1,5 @@
 
-# Semantics
+# Correlations in NPBNs
 
 Each Directed Acyclic Graph (DAG) with conditional or unconditional correlations on the arcs can be represented by a _rank correlation matrix_. In this section, the definition of rank correlation matrix, the semantics of the DAGs and their implication in the representative rank correlation matrix are discussed.  
 
@@ -93,8 +93,8 @@ $$
 
 The fact that the rank correlations are algebraically independent is needed to guarantee that the joint distribution of the $n$ variables exists and is uniquely determined.
 
-## Semantics of DAGs
+## It's your turn now!
 
-Note that since the dependence between each bivariate pair is modelled using a bivariate Gaussian copula, NPBN have the intrinsic limitations of this copula family. Gaussian copulas are symmetric models which cannot model tail dependence. Therefore, **NPBN do not account for tail dependence too.
+EXERCISE TO ADD
 
 [^hanea]: Hanea, A., Morales-Napoles, O., Ababei, D. (2015). Non-parametric Bayesian networks: Improving theory and reviewing applications. Reliability Engineering & System Safety 144, 265-284, https://doi.org/10.1016/j.ress.2015.07.027.

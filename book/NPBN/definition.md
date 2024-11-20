@@ -15,7 +15,7 @@ Two nodes linked by an arc are called parent and child, being the parent node th
 
 The nodes in the DAG are quantified using univariate distribution, which can be either empirical or parametric of any family, as long as it is invertible. The arcs in the DAG are quantified using bivariate Gaussian copulas with _conditional or unconditional rank correlations_ (further explanation later in this chapter). Thus, **the joint distribution is built in bivariate pieces of dependence**.
 
-Note that since the dependence between each bivariate pair is modelled using a bivariate Gaussian copula, NPBN have the intrinsic limitations of this copula family. Gaussian copulas are symmetric models which cannot model tail dependence. Therefore, **NPBN do not account for tail dependence too.
+Note that since the dependence between each bivariate pair is modelled using a bivariate Gaussian copula, NPBN have the intrinsic limitations of this copula family. Gaussian copulas are symmetric models which cannot model tail dependence. Therefore, **NPBN do not account for tail dependence** too.
 
 ## Conditional correlation intuitively
 
