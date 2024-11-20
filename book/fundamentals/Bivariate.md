@@ -156,7 +156,7 @@ We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ witho
 ---
 
 ---
-Unconditional and conditional bivariate Gaussian distributions for $Q_1$ and $Q_2$. Same density contours are plotted for both distributions. The arrows show the direction to which the joint probability decreases.
+Unconditional and conditional bivariate Gaussian distributions for $Q_1$ and $Q_2$. Same density contours are plotted for both distributions. The small arrows indicate the shift in the joint probability contours.
 ```
 
 ## Extra material: a video
