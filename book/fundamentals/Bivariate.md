@@ -211,7 +211,7 @@ Assuming that $F(T_{chain}, T_{cassette}, T_{clean})$ follows a multivariate Gau
 :class: tip, dropdown
 Initial distribution:
 
-The parameters of the multivariate Gaussian distribution are the mean vector $\bold{\mu}$ and the covariance matrix $\boldsymbol{\Sigma}$ that are given by
+The parameters of the multivariate Gaussian distribution are the mean vector $\boldsymbol{\mu}$ and the covariance matrix $\boldsymbol{\Sigma}$ that are given by
 
 $$
 \boldsymbol{\mu} = \begin{pmatrix}  1700 \\ 1300 \\ 12 \end{pmatrix}
