@@ -23,7 +23,7 @@ On the other hand, if $Cov(X_1,X_2)<0$, high values of $X_1$ typically occur tog
 Note that the covariance of one variable with itself is equal to the variance.
 
 $$
-Cov(X,X)=\mathbb{E}([X_i-\mathbb{E}(X)]^2) =\sigma^2_{X}
+Cov(X,X)=\mathbb{E}([X_i-\mathbb{E}(X)]^2) =Var(X)=\sigma^2_{X}
 $$
 
 ## Covariance: geometric interpretation
@@ -44,7 +44,15 @@ $$
 \text{Cov}(X_1, X_2) = \mathbb{E}[(X_{1,i} - \mathbb{E}(X_1))(X_{2,i} - \mathbb{E}(X_2))]
 $$
 
-In that expression, we can see that the covariance is the expectation of a product of two terms. Each of these terms represents the difference between an observation and the expected value of the random variable (i.e., its mean). Therefore, it can be interpreted as the rectangular area defined by the distances of each observation to the mean values of the two random variables. This is, the areas of the rectangles defined in the panel (b) of the Figure above.
+In that expression, we can see that the covariance is the expectation of a product of two terms. Each of these terms represents the difference or distance between an observation and the expected value of the random variable (i.e., its mean). Thus, each term can be graphically represented as a line that goes from the value of the observation to the mean. The product of the two defined distances can then be interpreted as the product of the sides of a rectangle which are defined by the distances of the observation to the mean values of the two random variables. This is, the areas of the rectangles defined in the panel (b) of the Figure above. The covariance is the expectation (or mean) of these areas, i.e. the covariance represents the average area of the defined rectangles, as shown in the figure below.
+
+```{figure} ../figures/areas.png
+
+---
+
+---
+Geometric interpretation of the covariance: (a) some of the areas that represent the term $[X_{1,i}-\mathbb{E}(X_1)][X_{2,i}-\mathbb{E}(X_2)]$, and (b) average area.
+```
 
 ## Covariance matrix
 
