@@ -1,7 +1,8 @@
+(multi)=
 
 # Multivariate Gaussian distribution
 
-One of the simplest approaches to define a multivariate distribution, $F(X_{1}, X_{2}..,X_{n})$, is through the multivariate Gaussian distribution. This model assumes that both the marginals and the dependence are Gaussian. Keep in mind that the Gaussian distribution is not always the best model so the applicability of the multivariate Gaussian is limited. However, it is a convenient model since it can be manipulated analytically and we can use it as a first approach to model the dependence. Here emphasis is given in the simplest case of the multivariate Gaussian distribution, which is the bivariate distribution, so it is easier to visualize the concepts explained. The concepts explained though can be applied to all Multivariate Gaussian distributions.
+One of the simplest approaches to define a multivariate distribution, $F(x_{1}, x_{2}..,x_{n})$, is through the multivariate Gaussian distribution. This model assumes that both the marginals and the dependence are Gaussian. Keep in mind that the Gaussian distribution might not always be the best model so its applicability is limited. However, it is a convenient model since it can be manipulated analytically and we can use it as a first approach to model the dependence. Here, emphasis is given in the simplest case of the multivariate Gaussian distribution, the bivariate distribution, as it is easier to visualize. However, the concepts explained here can be applied to Multivariate Gaussian distributions in higher dimensions.
 
 ## Definition of bivariate Gaussian distribution
 The bivariate Gaussian distribution for two random variables $X_1$ and $X_2$ is defined as
@@ -34,7 +35,7 @@ $$
 
 Note that when talking about the Gaussian distribution instead of using $F_{X_1,X_2}(x_1,x_2)$, we use $\Phi_{X_1,X_2}(x_1,x_2)$, but it means the same!
 
-Lets now think of an example. Consider the discharge of two rivers,$Q_{1}$ and $Q_{2}$, that are located in the same watershed, which will serve as our two random variables. Since the rivers are located in the same watershed, it is relatively safe to assume that their discharges are correlated. You can play with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
+You can play with the interactive element below changing the correlation value yourself. Observe how the distribution's _density_ contours, or a scatter plot of _samples,_ change when you adjust the correlation.
 
 <br>
 
@@ -57,9 +58,9 @@ Bivariate Gaussian distribution: (left) probability density function, and (right
 
 ## Conditionalizing a bivariate Gaussian distribution
 
-Multivariate Gaussian distributions are useful because we can derive results analytically. Here, we are going to conditionalize a bivariate Gaussian distribution to exemplify it.
+Multivariate Gaussian distributions are convenient because we can derive results analytically. Here, we are going to conditionalize a bivariate Gaussian distribution to exemplify it.
 
-Given that we are modelling the joint probability distribution of $X_1$ and $X_2$ using a bivariate Gaussian distribution and we know $x_2=a$, what is the expected distribution for $X_1$?
+_Given that we are modelling the joint probability distribution of $X_1$ and $X_2$ using a bivariate Gaussian distribution and we know $x_2=a$, what is the expected distribution for $X_1$?_
 
 An important property of the multivariate Gaussian distribution is that if two sets of variables are jointly Gaussian, then the conditional distribution of one set conditioned on the other is again Gaussian. Thus, the conditional distribution of $X_1$ given the value of $X_2$ will be a Gaussian distribution whose mean value ($\hat{\mu}$) and standard deviation ($\hat{\Sigma}$) we need to estimate. This is, we want to compute $(x_1|x_2=a)\sim N(\hat{\mu}, \hat{\Sigma})$. We can derive expressions for $\hat{\mu}$ and $\hat{\Sigma}$ applying the definition of conditional density $\phi(x_1|x_2=a)=\frac{f_{X_1,X_2}(x_1, a)}{f_{X_2}(a)}$ knowing that $f_{X_1,X_2}$ is a bivariate Gaussian distribution and $f_{X_2}$ is a univariate Gaussian distribution, replacing $x_2$ by $a$ and doing the (unpleasant) algebra. By doing so, we would reach the following expressions:
 
@@ -73,8 +74,7 @@ $$
 
 where $a$ is the known value of $X_2$ and $\boldsymbol{\Sigma}=\begin{pmatrix} \Sigma_{11} \ \Sigma_{12} \\ \Sigma_{21} \ \Sigma_{22} \end{pmatrix}$.
 
-Let’s go now back to the example of the discharges of two neighboring rivers, $Q_{1}$ and $Q_{2}$.
-We have historical measurements for both discharges and we want to apply a bivariate Gaussian distribution to model their joint distribution. Using the historical dataset, we can compute their mean values, $\mu_1=94 m^3/s$ and $\mu_2=78 m^3/s$, their standard deviations, $\sigma_1= 41 m^3/s$ and $\sigma_2=35 m^3/s$, and the covariance between them, $Cov(Q_1, Q_2)=1000 (m^3/s)^2$. We know that $q_2=100 m^3/s$. What is then the expected distribution for $Q_1$? This is, we want to compute $(q_1|q_2=100m^3/s)\sim N(\hat{\mu}, \hat{\Sigma})$.
+Let's now think of an example of application. Consider the discharge of two rivers,$Q_{1}$ and $Q_{2}$, that are located in the same watershed, which will serve as our two random variables. Since the rivers are located in the same watershed, it is relatively safe to assume that their discharges are correlated. We have historical measurements for both discharges and we want to apply a bivariate Gaussian distribution to model their joint distribution. Using the historical dataset, we can compute their mean values, $\mu_1=94 m^3/s$ and $\mu_2=78 m^3/s$, their standard deviations, $\sigma_1= 41 m^3/s$ and $\sigma_2=35 m^3/s$, and the covariance between them, $Cov(Q_1, Q_2)=1000 (m^3/s)^2$. We know that $q_2=100 m^3/s$. What is then the expected distribution for $Q_1$? This is, we want to compute $(q_1|q_2=100m^3/s)\sim N(\hat{\mu}, \hat{\Sigma})$.
 
 We can summarize the above information as
 
@@ -149,7 +149,7 @@ Unconditional and conditional Gaussian distributions given $P$: (left) $Q_1$, an
 
 <br>
 
-We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing. 
+We can also compare the bivariate Gaussian distribution of $Q_1$ and $Q_2$ without and with the conditionalization, as shown in the Figure below. You can see how the mode of the distribution (point of maximum density) has moved towards the upper right side of the plot and become slightly narrower  when conditionalizing. This is because the three variables are positively correlated and we have conditionalized on a value of precipitation higher than the mean.
 
 ```{figure} ../figures/joint_prob_conditional.png
 
@@ -175,18 +175,43 @@ If you need to refresh the concept of covariance and correlation and want to see
 
  <br><br>
 
+ ## Your turn now!
+
 :::{card} Exercise: Keep your bike chain clean
 
-Most probably you are riding a bike everyday. You can also, most probably, imagine that your bike parts will not live infinitely and some point something will fail. In addition, a failure of a part can cause the subsequent failure of a different part that is connected to it in someway. For example a failure in the chain might also damage the rear cassette and vice versa. In this example we are interested in the life time of these parts in connection with how much they are used, meaning how many hours you biked in total since buying your bicycle or replacing that specific part. 
+Considering that you are living in the Netherlands, most probably, you are riding a bike everyday. You can imagine that your bike parts will deteriorate over time and, at some point, they will break. Also, the failure of a part in the mechanism may cause a subsequent failure of a different part connected to it. For example, the failure of the chain might damage the rear cassette and vice versa. In this exercise, we are going to model the number of hours of riding until the failure of parts of the bike.
 
-Lets now say that the companies that design these parts inform us that the possibility of failure after $x$ hours of riding is a gaussian distribution for both of them,  with $\mu_{T_{chain}} = 1700 hr$  and $\sigma_{T_{chain}} = 600 hr$ and $\mu_{T_{cassette}} = 1300 hr$ with $\sigma_{T_{cassette}} = 850 hr$. After trials, we find that the covariance of failure hours for that combination of this chain and cassette model is $Cov(T_{chain},T_{cassette}) = 336000$ hours$^2$. Remember that given the above, you can estimate the correlation between the failure times of these two parts.
+Let's now say that the companies that design these parts inform us that the distribution of the number of hours of riding until failure for students from TU Delft is a Gaussian distribution  with $\mu_{T_{chain}} = 1700 hr$ and $\sigma_{T_{chain}} = 600 hr$ for the number of hours until the chain breaks ($T_{chain}$), and $\mu_{T_{cassette}} = 1300 hr$ with $\sigma_{T_{cassette}} = 850 hr$ for the number of hours until the cassette breaks ($T_{casette}$). Also, we find that $Cov(T_{chain},T_{cassette}) = 336000$ hours$^2$. 
 
-The former stand of course IF you are cleaning the bike regularly, which we can agree is not the case usually. It is obvious that a rusting chain, due to its exposure in the typical Dutch weather, will not be as strong as its brand new version. Lets say that the mean number of bike cleaning days for a student in a year is $\mu_{T_{clean}} = 12 days$ (lie!) and $\sigma_{T_{clean}} = 6.3 days$. You also happen to know the covariances $Cov(T_{clean},T_{chain}) =  2835$ and $Cov(T_{clean},T_{cassette}) = 3748.5$.  If the failing hours of the part after use as well as the cleaning days per year are gaussian distributions, calculate the conditional bivariate distribution of chain and cassette failing hours if a bike is cleaned only 7 times per year.
+```{admonition} Compute Pearson's correlation coefficient between $T_{chain}$ and $T_{cassette}$
+:class: tip, dropdown
+
+$$
+\rho_{T_{chain}, T_{cassette}} = \frac{Cov(T_{chain}, T_{cassette})}{\sigma_{T_{chain}} \sigma_{T_{cassette}}} = \frac{336000}{600 \times 850} \approx 0.66 
+$$
+```
+
+```{admonition} Define the covariance matrix for $T_{chain}$ and $T_{cassette}$
+:class: tip, dropdown
+
+$$
+\Sigma = \begin{pmatrix}
+600 \ \ \ 336000 \\
+336000 \ \ \ 850
+\end{pmatrix}
+$$
+```
+
+The former information depends also on how regularly the students are cleaning the bike, which is not always that frequently. It is obvious that a rusting chain, due to its exposure in the typical Dutch weather, will not be as strong as its brand new version. Let's say that the mean number of bike cleaning days for a student of TU Delft in a year is $\mu_{T_{clean}} = 12 \ days$ (that much?) and $\sigma_{T_{clean}} = 6.3 \ days$. You also know the relationship between the $T_{clean}$, $T_{chain}$ and $T_{cassette}$ defined by $Cov(T_{clean},T_{chain}) =  2835 \ h \cdot days$ and $Cov(T_{clean},T_{cassette}) = 3748.5 \ h \cdot days$. 
+
+Assuming that $F(T_{chain}, T_{cassette}, T_{clean})$ follows a multivariate Gaussian distributions, compute the parameters of the conditional bivariate distribution of $T_{chain}$ and $T_{cassette}$ for a student that cleans the bike only 7 days per year.
 
 
 ```{admonition} Solution
 :class: tip, dropdown
 Initial distribution:
+
+The parameters of the multivariate Gaussian distribution are the mean vector $\boldsymbol{\mu}$ and the covariance matrix $\boldsymbol{\Sigma}$ that are given by
 
 $$
 \boldsymbol{\mu} = \begin{pmatrix}  1700 \\ 1300 \\ 12 \end{pmatrix}
@@ -195,7 +220,7 @@ $$
 $$
 \boldsymbol{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \  2835 \\ 336000 \ 850^2 \  3748.5\\  2835 \  3748.5 \ 6.3^2\end{pmatrix}$$
 
-After we conditionalize $T_{clean}$ = 7 days:
+If we know that $T_{clean}$ = 7 days, we can conditionalize the multivariate Gaussian distribution as:
 
 $$
 \hat{\mu} = \begin{pmatrix} 1700 \\ 1300 \end{pmatrix} + \begin{pmatrix}  2835 \\ 3748.5 \end{pmatrix} (6.3^2)^{-1} (7 - 12) = \begin{pmatrix} 1342.6 \\ 827.8 \end{pmatrix} 
@@ -204,5 +229,11 @@ $$
 $$
 \hat{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 2835 \\  3748.5 \ \end{pmatrix} (6.3^2)^{-1} \begin{pmatrix} 2835 \ 3748.5\end{pmatrix} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 202500 \ 267750 \\ 267750 \ 354025 \end{pmatrix} = \begin{pmatrix} 157500 \ 92250 \\ 92250 \  368475 \end{pmatrix}
 $$
+```
+
+```{admonition} Still want more?
+:class: tip, dropdown
+
+Use the multivariate Gaussian distribution implemented in Scipy.stats to plot the density contours of the conditional and unconditional bivariate distributions. How has the distribution changed?
 ```
 :::
