@@ -91,7 +91,7 @@ $$
 
 :::
 
-The fact that the rank correlations are algebraically independent is needed to guarantee that the joint distribution of the $n$ variables exists and is uniquely determined.
+The fact that the rank correlations are algebraically independent is needed to guarantee that the joint distribution of the $n$ variables exists and is uniquely determined. This is, not every assignment of rank correlation matrices in the arcs leads to a valid rank correlation matrix.
 
 ## It's your turn now!
 
