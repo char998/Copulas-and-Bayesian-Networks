@@ -227,7 +227,7 @@ $$
 $$
 
 $$
-\hat{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 2835 \\  3748.5 \ \end{pmatrix} (6.3^2)^{-1} \begin{pmatrix} 2835 \ 3748.5\end{pmatrix} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 202500 \ 267750 \\ 267750 \ 354025 \end{pmatrix} = \begin{pmatrix} 157500 \ 92250 \\ 92250 \  368475 \end{pmatrix}
+\hat{\Sigma} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 2835 \\  3748.5 \ \end{pmatrix} (6.3^2)^{-1} \begin{pmatrix} 2835 \ 3748.5\end{pmatrix} = \begin{pmatrix} 600^2 \ 336000 \\ 336000 \ 850^2 \end{pmatrix} - \begin{pmatrix} 202500 \ 267750 \\ 267750 \ 354025 \end{pmatrix} = \begin{pmatrix} 157500 \ 68250 \\ 68250 \  368475 \end{pmatrix}
 $$
 ```
 
