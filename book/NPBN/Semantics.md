@@ -147,7 +147,7 @@ When the trucks go over the bridge, the loads induced through their axles go det
 
 ## It's your turn now!
 
-Define the rank correlation matrix for the following graphs.
+Define the rank correlation matrix for the following graph.
 
 ![solution](../figures/Assigned_ranks.png)
 
