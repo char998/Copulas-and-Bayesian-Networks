@@ -33,7 +33,7 @@ r_{31} \ \ r_{32} \ \ \ 1\\
 \end{pmatrix}
 $$
 
-**Let's see it with examples!**
+### Let's see it with examples!
 
 The first example is with a discrete Bayesian Network (DBN) and, thus, with discrete variables. In the Figure below, you have a DBN with the following nodes: (1) the probability that it snows, (2) the probability that the train is late, and (3) the probability that you, as train used, are late. If it snows, it is much more likely that the train is late due to the metheorological conditions and, thus, that you are also late. Therefore, (1) and (3) are not independent, as we saw before. However, once I know that the train is late, the probability of being late is not affected any more about the fact that it snows or not. This is, (1) and (3) become independent once I know (2), as we saw before
 
@@ -120,5 +120,29 @@ r_{21} \ \ 1 \ \ \ r_{23} \\
 0 \ \ r_{32} \ \ \ 1\\
 \end{pmatrix}
 $$
+
+### Let's see it with examples!
+
+The first example is with discrete variables. In the Figure below, you have a DBN with the following nodes: (1) the probability of burglary, (2) the probability of the alarm of the house ringing, and (3) the probability of an earthquake happening. The fact that the alarm rings can be then cause by either an earthquake or burglary. However, the fact that there is an earthquake has nothing to do with the probability of somebody breaking in the house ($X_1 \perp X_3$). This changes once the alarm rings: if there is an earthquake, it is potentially the cause of making the alarm ring and, thus, burglary is less likely ($X_1 \cancel{\perp} X_3|X_2$)
+
+```{figure} ./figures/discrete_case_c.png
+
+---
+
+---
+Discrete case (c).
+```
+
+Let's make the variables continuous now. In the Figure below, you have a NPBN with the following random variables in the nodes: (1) axle loads of trucks over a bridge, (2) quantitative damage that the elements of the bridge suffer, and (3) the intensity of the earthquake. They are, thus, continuous variables quantified with continuous distribution functions. 
+
+```{figure} ./figures/continuous_case_c.png
+
+---
+
+---
+Example of a NPBN for case (c) with the two possible combinations of (un)conditional rank correlations in the arcs.
+```
+
+When the trucks go over the bridge, the loads induced through their axles go deteriorating over time the bridge and, thus, gradually increasing the damage. The higher the axle loads, more likely to observe higher values of deterioration in the bridge. The same holds for the earthquake intensity: the higher the intensity, the more likely to observe higher values of damage in the bridge. However, the intensity of the earthquake does not have anything to do with the axle loads of the trucks. Nevertheless, if I observe a high value of damage in the bridge, this change. If I also observe a high intensity of an earthquake, it is likely that the cause of the damage is the earthquake and, thus, it is less likely to observe high values of the axle loads.
 
 [^pearl]: Pearl, J. Probabilistic reasoning in intelligent systems : networks of plausible inference. Available [here](https://tudelft.on.worldcat.org/search/detail/927108286?queryString=Probabilistic%20reasoning%20in%20intelligent%20systems%3A%20networks%20of%20plausible%20inference).
