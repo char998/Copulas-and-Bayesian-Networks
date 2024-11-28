@@ -1,7 +1,7 @@
 
 # Semantics of NPBNs
 
-In previous section, you have seen how to assign (un)conditional rank correlations to a DAG and the rank correlation matrix as a representation of the NPBN. If you want to read more about NPBN and their semantics, we refer you to Pearl (1988).
+In previous section, you have seen how to assign (un)conditional rank correlations to a DAG and the rank correlation matrix as a representation of the NPBN. If you want to read more about NPBN and their semantics, we refer you to Pearl (1988)[^pearl].
 
 In this section, you will see the meaning of the DAG in terms of (un)conditional dependence or independence and how that translates to the rank correlation matrix. To do so, we will analyze the three basic cases of NPBN on 3 nodes shown in the Figure below.
 
@@ -32,3 +32,5 @@ Let's make the variables continuous now. In the Figure below, you have a NPBN wi
 
 
 If the probability of high values of snow increase for a day, the probabilitiy of a higher delay of the train also increases and, together with it, also the probability of higher delay for me. However, once I know how many minutes the train is late, the amount of snow does not have an influence on my expected delay.
+
+[^pearl]: Pearl, J. Probabilistic reasoning in intelligent systems : networks of plausible inference. Available [here](https://tudelft.on.worldcat.org/search/detail/927108286?queryString=Probabilistic%20reasoning%20in%20intelligent%20systems%3A%20networks%20of%20plausible%20inference).
