@@ -1,7 +1,7 @@
 
 # Semantics of NPBNs
 
-In previous section, you have seen how to assign (un)conditional rank correlations to a DAG and the rank correlation matrix as a representation of the NPBN. If you want to read more about NPBN and their semantics, we refer you to [Pearl (1988)](https://tudelft.on.worldcat.org/search/detail/927108286?queryString=Probabilistic%20reasoning%20in%20intelligent%20systems%3A%20networks%20of%20plausible%20inference).
+In previous section, you have seen how to assign (un)conditional rank correlations to a DAG and the rank correlation matrix as a representation of the NPBN. If you want to read more about NPBN and their semantics, we refer you to Pearl (1988)[^pearl].
 
 In this section, you will see the meaning of the DAG in terms of (un)conditional dependence or independence and how that translates to the rank correlation matrix. To do so, we will analyze the three basic cases of NPBN on 3 nodes shown in the Figure below.
 
@@ -137,3 +137,5 @@ Example of a NPBN for case (c) with the two possible combinations of (un)conditi
 ```
 
 When the trucks go over the bridge, the loads induced through their axles go deteriorating over time the bridge and, thus, gradually increasing the damage. The higher the axle loads, more likely to observe higher values of deterioration in the bridge. The same holds for the earthquake intensity: the higher the intensity, the more likely to observe higher values of damage in the bridge. However, the intensity of the earthquake does not have anything to do with the axle loads of the trucks. Nevertheless, if I observe a high value of damage in the bridge, this change. If I also observe a high intensity of an earthquake, it is likely that the cause of the damage is the earthquake and, thus, it is less likely to observe high values of the axle loads.
+
+:[^pearl]: https://tudelft.on.worldcat.org/search/detail/927108286?queryString=Probabilistic%20reasoning%20in%20intelligent%20systems%3A%20networks%20of%20plausible%20inference
