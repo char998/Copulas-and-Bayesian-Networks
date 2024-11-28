@@ -1,7 +1,7 @@
 
 # Semantics of NPBNs
 
-In previous section, you have seen how to assign (un)conditional rank correlations to a DAG and the rank correlation matrix as a representation of the NPBN. If you want to read more about NPBN and their semantics, we refer you to Pearl (1988)[^pearl].
+In previous section, you have seen how to assign (un)conditional rank correlations to a DAG and the rank correlation matrix as a representation of the NPBN. If you want to read more about NPBN and their semantics, we refer you to Pearl (1988).
 
 In this section, you will see the meaning of the DAG in terms of (un)conditional dependence or independence and how that translates to the rank correlation matrix. To do so, we will analyze the three basic cases of NPBN on 3 nodes shown in the Figure below.
 
