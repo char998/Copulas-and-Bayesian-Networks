@@ -19,6 +19,8 @@ parts:
            title: Correlations in NPBNs
          - file: NPBN/NPBN_tutorial.ipynb
            title: Tutorial py-Banshee
+      - file: vines/tutorial.ipynb
+        title: Tutorial vine-copulas
     # - file: references.md
     # - file: changelog.md
     # - file: credits.md
