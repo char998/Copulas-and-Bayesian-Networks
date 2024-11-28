@@ -5,7 +5,13 @@ In previous section, you have seen how to assign (un)conditional rank correlatio
 
 In this section, you will see the meaning of the DAG in terms of (un)conditional dependence or independence and how that translates to the rank correlation matrix. To do so, we will analyze the three basic cases of NPBN on 3 nodes shown in the Figure below.
 
+```{figure} ./figures/DAGs.png
 
+---
+
+---
+Cases of DAGs on 3 nodes.
+```
 
 ## Case (a): 1 $\rightarrow$ 2 $\rightarrow$ 3
 
