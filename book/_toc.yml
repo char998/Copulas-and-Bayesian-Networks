@@ -17,6 +17,8 @@ parts:
            title: Definition
          - file: NPBN/Correls.md
            title: Correlations in NPBNs
+         - file: NPBN/Semantics.md
+           title: Semantics in NPBNs
          - file: NPBN/NPBN_tutorial.ipynb
            title: Tutorial py-Banshee
     # - file: references.md
