@@ -15,7 +15,13 @@ Cases of DAGs on 3 nodes.
 
 ## Case (a): 1 $\rightarrow$ 2 $\rightarrow$ 3
 
+```{figure} ./figures/case_a.png
 
+---
+
+---
+Case (a).
+```
 
 In this first case, $X_1$ is the parent of $X_2$ and $X_2$ is the parent of $X_3$. The first thing that we can derive from the DAG is that $X_1 \cancel{\perp} X_2$ and $X_2 \cancel{\perp} X_3$ as there are direct statements of the dependence between the variables. Moreover, due to the direction of the arrows in this case as a sequence, $X_1 \cancel{\perp} X_3$. This is, the dependence between $X_1$ and $X_3$ is inferred through the DAG. However, $X_1$ and $X_3$ become independent once I know the value of $X_2$ (mathematically $X_1 \perp X_3|X_2$). Therefore, the rank correlation matrix that would be derived from this NPBN would be complete as
 
