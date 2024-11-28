@@ -151,6 +151,23 @@ Define the rank correlation matrix for the following graphs.
 
 ![solution](../figures/Assigned_ranks.png)
 
+```{admonition} Solution
+:class: tip, dropdown
+
+$$
+\begin{pmatrix}
+1 \ \ \ 0 \ \ \ r_{13} \ \ \ r_{14} \ \ \ r_{15} \ \ \ r_{16} \ \ \ r_{17} \ \ \ r_{18}\\
+0 \ \ \ 1 \ \ \ r_{23} \ \ \ r_{24} \ \ \ r_{25}  \ \ \ r_{26} \ \ \ r_{27} \ \ \ r_{28}\\
+r_{13} \ \ r_{23} \ \ \ 1 \ \ \ r_{34} \ \ \ r_{35}  \ \ \ r_{36} \ \ \ r_{37} \ \ \ r_{38}\\
+r_{14} \ \ r_{24} \ \ \ r_{34} \ \ \ 1 \ \ \ r_{45}  \ \ \ r_{46} \ \ \ r_{47} \ \ \ r_{48}\\
+r_{15} \ \ r_{25} \ \ \ r_{35} \ \ \ r_{45} \ \ \ 1  \ \ \ r_{56} \ \ \ r_{57} \ \ \ r_{58}\\
+r_{16} \ \ r_{26} \ \ \ r_{36} \ \ \ r_{46} \ \ \ r_{56}  \ \ \ 1 \ \ \ r_{67} \ \ \ r_{68}\\
+r_{17} \ \ r_{27} \ \ \ r_{37} \ \ \ r_{47} \ \ \ r_{57}  \ \ \ r_{67} \ \ \ 1 \ \ \ r_{78}\\
+r_{18} \ \ r_{28} \ \ \ r_{38} \ \ \ r_{48} \ \ \ r_{58}  \ \ \ r_{68} \ \ \ r_{78} \ \ \ 1\\
+\end{pmatrix}
+$$
+
+```
 
 
 [^pearl]: Pearl, J. Probabilistic reasoning in intelligent systems : networks of plausible inference. Available [here](https://tudelft.on.worldcat.org/search/detail/927108286?queryString=Probabilistic%20reasoning%20in%20intelligent%20systems%3A%20networks%20of%20plausible%20inference).
