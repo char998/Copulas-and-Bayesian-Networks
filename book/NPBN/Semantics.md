@@ -55,11 +55,85 @@ If the probability of high values of snow increase for a day, the probabilitiy o
 
 ## Case (b): 1 $\leftarrow$ 2 $\rightarrow$ 3
 
-aa
+```{figure} ./figures/case_b.png
+
+---
+
+---
+```
+
+In this first case, $X_2$ is the parent of both $X_1$ and $X_3$. The first thing that we can derive from the DAG is that $X_1 \cancel{\perp} X_2$ and $X_2 \cancel{\perp} X_3$ as there are direct statements of the dependence between the variables. Moreover, since both $X_1$ and $X_3$ depend on $X_2$, they are not independent ($X_1 \cancel{\perp} X_3$). This is, the dependence between $X_1$ and $X_3$ is inferred through the DAG. However, $X_1$ and $X_3$ become independent once I know the value of $X_2$ (mathematically $X_1 \perp X_3|X_2$). Therefore, the rank correlation matrix that would be derived from this NPBN would be complete as
+
+$$
+\begin{pmatrix}
+1 \ \ \ r_{12} \ \ \ r_{13}\\
+r_{21} \ \ 1 \ \ \ r_{23} \\
+r_{31} \ \ r_{32} \ \ \ 1\\
+\end{pmatrix}
+$$
+
+### Let's see it with examples!
+
+The first example is with discrete variables. In the Figure below, you have a DBN with the following nodes: (1) the probability of having lung cancer, (2) the probability of smoking, and (3) the probability of having bronchitis. According to several studies, smokers are more prone to develing lung conditions such as bronchitis and lung cancer. Thus, having bronchitis makes more likely to be a smoker and, thus, develop lung cancer ($X_1 \cancel{\perp} X_3$). However, once I know that somebody smokes, the fact of having bronchitis does not provide me with more information to determine what is the probability of that person having lung cancer ($X_1 \perp X_3| X_2$)
+
+```{figure} ./figures/discrete_case_b.png
+
+---
+
+---
+```
+
+Let's make the variables continuous now. In the Figure below, you have a NPBN with the following random variables in the nodes: (1) forces on buildings due to wind, (2) wind speed, and (3) wave height of the wind-generated waves. They are, thus, continuous variables quantified with continuous distribution functions. 
+
+```{figure} ./figures/continuous_case_b.png
+
+---
+
+---
+```
+
+When the wind blows along a coastal city, it generates waves near the shore and also impacts the building in the city generating forces on them. The higher the wind speed, the more probable become high forces on the buildings and high wave heights. High wind forces on the buildings make more likely high wind speeds and, thus, high wave heights. Therefore, $X_1 \cancel{\perp} X_3$. However, once I know the value of the wind speed, observing high values of the wave height does not provide me with more information about the wind forces on the buildings ($X_1 \perp X_3|X_2$).
 
 ## Case (c): 1 $\rightarrow$ 2 $\leftarrow$ 3
 
-aa
+```{figure} ./figures/case_c.png
+
+---
+
+---
+```
+
+In this first case, $X_2$ is the parent of both $X_1$ and $X_3$. The first thing that we can derive from the DAG is that $X_1 \cancel{\perp} X_2$ and $X_2 \cancel{\perp} X_3$ as there are direct statements of the dependence between the variables. Moreover, since both $X_1$ and $X_3$ depend on $X_2$, they are not independent ($X_1 \cancel{\perp} X_3$). This is, the dependence between $X_1$ and $X_3$ is inferred through the DAG. However, $X_1$ and $X_3$ become independent once I know the value of $X_2$ (mathematically $X_1 \perp X_3|X_2$). Therefore, the rank correlation matrix that would be derived from this NPBN would be complete as
+
+$$
+\begin{pmatrix}
+1 \ \ \ r_{12} \ \ \ r_{13}\\
+r_{21} \ \ 1 \ \ \ r_{23} \\
+r_{31} \ \ r_{32} \ \ \ 1\\
+\end{pmatrix}
+$$
+
+### Let's see it with examples!
+
+The first example is with discrete variables. In the Figure below, you have a DBN with the following nodes: (1) the probability of having lung cancer, (2) the probability of smoking, and (3) the probability of having bronchitis. According to several studies, smokers are more prone to develing lung conditions such as bronchitis and lung cancer. Thus, having bronchitis makes more likely to be a smoker and, thus, develop lung cancer ($X_1 \cancel{\perp} X_3$). However, once I know that somebody smokes, the fact of having bronchitis does not provide me with more information to determine what is the probability of that person having lung cancer ($X_1 \perp X_3| X_2$)
+
+```{figure} ./figures/discrete_case_c.png
+
+---
+
+---
+```
+
+Let's make the variables continuous now. In the Figure below, you have a NPBN with the following random variables in the nodes: (1) forces on buildings due to wind, (2) wind speed, and (3) wave height of the wind-generated waves. They are, thus, continuous variables quantified with continuous distribution functions. 
+
+```{figure} ./figures/continuous_case_c.png
+
+---
+
+---
+```
+
+When the wind blows along a coastal city, it generates waves near the shore and also impacts the building in the city generating forces on them. The higher the wind speed, the more probable become high forces on the buildings and high wave heights. High wind forces on the buildings make more likely high wind speeds and, thus, high wave heights. Therefore, $X_1 \cancel{\perp} X_3$. However, once I know the value of the wind speed, observing high values of the wave height does not provide me with more information about the wind forces on the buildings ($X_1 \perp X_3|X_2$).
 
 ## It's your turn now!
 
