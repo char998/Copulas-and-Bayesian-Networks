@@ -1,141 +1,119 @@
 
-# Semantics of NPBNs
+# Correlations in NPBNs
 
-In previous section, you have seen how to assign (un)conditional rank correlations to a DAG and the rank correlation matrix as a representation of the NPBN. If you want to read more about NPBN and their semantics, we refer you to Pearl (1988)[^pearl].
+Each Directed Acyclic Graph (DAG) with conditional or unconditional correlations on the arcs can be represented by a _rank correlation matrix_. In this section, the definition of rank correlation matrix, the semantics of the DAGs and their implication in the representative rank correlation matrix are discussed.  
 
-In this section, you will see the meaning of the DAG in terms of (un)conditional dependence or independence and how that translates to the rank correlation matrix. To do so, we will analyze the three basic cases of NPBN on 3 nodes shown in the Figure below.
+## Rank correlation matrix
 
-```{figure} ./figures/DAGs.png
-
----
-
----
-Cases of DAGs on 3 nodes.
-```
-
-## Case (a): 1 $\rightarrow$ 2 $\rightarrow$ 3
-
-```{figure} ./figures/case_a.png
-
----
-
----
-```
-
-In this first case, $X_1$ is the parent of $X_2$ and $X_2$ is the parent of $X_3$. The first thing that we can derive from the DAG is that $X_1 \cancel{\perp} X_2$ and $X_2 \cancel{\perp} X_3$ as there are direct statements of the dependence between the variables. Moreover, due to the direction of the arrows in this case as a sequence, $X_1 \cancel{\perp} X_3$. This is, the dependence between $X_1$ and $X_3$ is inferred through the DAG. However, $X_1$ and $X_3$ become independent once I know the value of $X_2$ (mathematically $X_1 \perp X_3|X_2$). Therefore, the rank correlation matrix that would be derived from this NPBN would be complete as
+A rank correlation matrix representing a DAG with conditional or unconditional correlations is a $n \times n$ matrix, where $n$ represents the number of nodes in the DAG. Each element is a rank correlation computed between the random variables whose indexes correspond to the indexes of the rows and columns. This is, a rank correlation matrix for a 4-dimensions problem is givne by
 
 $$
 \begin{pmatrix}
-1 \ \ \ r_{12} \ \ \ r_{13}\\
-r_{21} \ \ 1 \ \ \ r_{23} \\
-r_{31} \ \ r_{32} \ \ \ 1\\
-\end{pmatrix}
-$$
-
-### Let's see it with examples!
-
-The first example is with a discrete Bayesian Network (DBN) and, thus, with discrete variables. In the Figure below, you have a DBN with the following nodes: (1) the probability that it snows, (2) the probability that the train is late, and (3) the probability that you, as train used, are late. If it snows, it is much more likely that the train is late due to the metheorological conditions and, thus, that you are also late. Therefore, (1) and (3) are not independent, as we saw before. However, once I know that the train is late, the probability of being late is not affected any more about the fact that it snows or not. This is, (1) and (3) become independent once I know (2), as we saw before
-
-```{figure} ./figures/discrete_case_a.png
-
----
-
----
-```
-
-Let's make the variables continuous now. In the Figure below, you have a NPBN with the following random variables in the nodes: (1) accumulated milimeters of snow a day, (2) minutes of delay of a train, and (3) minutes of delay to my destination. They are, thus, continuous variables quantified with continuous distribution functions. 
-
-```{figure} ./figures/continuous_case_a.png
-
----
-
----
-```
-
-If the probability of high values of snow increase for a day, the probabilitiy of a higher delay of the train also increases and, together with it, also the probability of higher delay for me. However, once I know how many minutes the train is late, the amount of snow does not have an influence on my expected delay.
-
-
-## Case (b): 1 $\leftarrow$ 2 $\rightarrow$ 3
-
-```{figure} ./figures/case_b.png
-
----
-
----
-```
-
-In this second case, $X_2$ is the parent of both $X_1$ and $X_3$. The first thing that we can derive from the DAG is that $X_1 \cancel{\perp} X_2$ and $X_2 \cancel{\perp} X_3$ as there are direct statements of the dependence between the variables. Moreover, since both $X_1$ and $X_3$ depend on $X_2$, they are not independent ($X_1 \cancel{\perp} X_3$). This is, the dependence between $X_1$ and $X_3$ is inferred through the DAG. However, $X_1$ and $X_3$ become independent once I know the value of $X_2$ (mathematically $X_1 \perp X_3|X_2$). Therefore, the rank correlation matrix that would be derived from this NPBN would be complete as
-
-$$
+r_{11} \ r_{12} \ r_{13} \ r_{14} \\
+r_{21} \ r_{22} \ r_{23} \ r_{24} \\
+r_{31} \ r_{32} \ r_{33} \ r_{34} \\
+r_{41} \ r_{42} \ r_{43} \ r_{44} 
+\end{pmatrix} = 
 \begin{pmatrix}
-1 \ \ \ r_{12} \ \ \ r_{13}\\
-r_{21} \ \ 1 \ \ \ r_{23} \\
-r_{31} \ \ r_{32} \ \ \ 1\\
+1 \ r_{12} \ r_{13} \ r_{14} \\
+r_{21} \ 1 \ r_{23} \ r_{24} \\
+r_{31} \ r_{32} \ 1 \ r_{34} \\
+r_{41} \ r_{42} \ r_{43} \ 1
 \end{pmatrix}
 $$
 
-### Let's see it with examples!
+The rank correlation computed between one random variable and itself is equal to one. Thus, the diagonal of the rank correlation matrix is populated with 1. Also, it should be noted that the rank correlation matrix is symmetric as $r_{12} = r_{21}$.
 
-The first example is with discrete variables. In the Figure below, you have a DBN with the following nodes: (1) the probability of having lung cancer, (2) the probability of smoking, and (3) the probability of having bronchitis. According to several studies, smokers are more prone to develing lung conditions such as bronchitis and lung cancer. Thus, having bronchitis makes more likely to be a smoker and, thus, develop lung cancer ($X_1 \cancel{\perp} X_3$). However, once I know that somebody smokes, the fact of having bronchitis does not provide me with more information to determine what is the probability of that person having lung cancer ($X_1 \perp X_3| X_2$)
+Note that it is also possible to compute a rank correlation matrix from observations. This is, just calculating the rank correlations between each pair of variables based on the observations and putting it in matricial shape.
 
-```{figure} ./figures/discrete_case_b.png
+```{admonition} "How do I want my rank correlation matrix of the DAG to be?"
+:class: tip
+When deriving a rank correlation matrix from a DAG that we have defined, we get the rank correlations that we are imposing between the random variables that we are studying. Therefore, we would like that those rank correlations are similar to those that we observed in our dataset. The comparison of the rank correlation matrix that we compute from the observations and that derived from the DAG gives us an idea of how good is our model.
 
----
-
----
+You will see more on this topic in section on assessment and validation.
 ```
 
-Let's make the variables continuous now. In the Figure below, you have a NPBN with the following random variables in the nodes: (1) forces on buildings due to wind, (2) wind speed, and (3) wave height of the wind-generated waves. They are, thus, continuous variables quantified with continuous distribution functions. 
+## Assigning correlations to the arcs
 
-```{figure} ./figures/continuous_case_b.png
+Each arc in the DAG is quantified through a conditional or unconditional rank correlation. But how do we assign them?
 
----
-
----
-```
-
-When the wind blows along a coastal city, it generates waves near the shore and also impacts the building in the city generating forces on them. The higher the wind speed, the more probable become high forces on the buildings and high wave heights. High wind forces on the buildings make more likely high wind speeds and, thus, high wave heights. Therefore, $X_1 \cancel{\perp} X_3$. However, once I know the value of the wind speed, observing high values of the wave height does not provide me with more information about the wind forces on the buildings ($X_1 \perp X_3|X_2$).
-
-## Case (c): 1 $\rightarrow$ 2 $\leftarrow$ 3
-
-```{figure} ./figures/case_c.png
-
----
-
----
-```
-
-In the third case, $X_2$ is the child of both $X_1$ and $X_3$. The first thing that we can derive from the DAG is that $X_1 \cancel{\perp} X_2$ and $X_2 \cancel{\perp} X_3$ as there are direct statements of the dependence between the variables. $X_2$ depends on $X_1$ and $X_3$, but not the other way around. Therefore, $X_1 \perp X_3$. Nevertheless, $X_1$ and $X_3$ become dependent once I know the value of $X_2$ (mathematically $X_1 \cancel{\perp} X_3|X_2$). Therefore, the rank correlation matrix that would be derived from this NPBN would be complete as
+Consider that each node $i$ represents a variable $X_i$. $Pa(i)={i_1, ..., i_{p(i)}}$ is the set of parent nodes of the node $i$. The rank correlations associated the arcs $i_{p(i)-k} \to i$ are given by
 
 $$
-\begin{pmatrix}
-1 \ \ \ r_{12} \ \ \ 0\\
-r_{21} \ \ 1 \ \ \ r_{23} \\
-0 \ \ r_{32} \ \ \ 1\\
-\end{pmatrix}
+    \begin{cases}
+      r_{i,i_{p(i)}} & \text{$k=0$}\\
+      r_{i,i_{p(i)-k}|i_{p(i)},...,i_{p(i)}-k+1} & \text{$1 \leq k \leq p(i)-1$}\\
+    \end{cases}       
 $$
 
-### Let's see it with examples!
+Note that ordering is not unique!
 
-The first example is with discrete variables. In the Figure below, you have a DBN with the following nodes: (1) the probability of burglary, (2) the probability of the alarm of the house ringing, and (3) the probability of an earthquake happening. The fact that the alarm rings can be then cause by either an earthquake or burglary. However, the fact that there is an earthquake has nothing to do with the probability of somebody breaking in the house ($X_1 \perp X_3$). This changes once the alarm rings: if there is an earthquake, it is potentially the cause of making the alarm ring and, thus, burglary is less likely ($X_1 \cancel{\perp} X_3|X_2$)
+Let's see how we assign conditional and unconditional rank correlations with an example. Imagine we want to assign the appropriate rank correlations to the DAG in the figure below. We start identifying the partners of each node. The nodes $X_1$, $X_2$ and $X_3$ do not have any parents. $X_4$ has as parents $X_1$, $X_2$ and $X_3$ so $Pa(4)=\{1, 2, 3\}$.
 
-```{figure} ./figures/discrete_case_c.png
-
----
+```{figure} ../figures/rank_corr_DAG_empty.png
 
 ---
+
+---
+Example DAG to assign (un)conditional rank correlations in the arcs.
 ```
 
-Let's make the variables continuous now. In the Figure below, you have a NPBN with the following random variables in the nodes: (1) axle loads of trucks over a bridge, (2) quantitative damage that the elements of the bridge suffer, and (3) the intensity of the earthquake. They are, thus, continuous variables quantified with continuous distribution functions. 
+Following the previous assignment rule, we start assigning $r_{34}$ ($k=0$) to the arc $3 \to 4$. Next, for $k=1$, we assign $r_{42|3}$ in the arc $2 \to 4$. Finally, for $k=3$, we assign $r_{41|3,2}$ in the arc $1 \to 4$.
 
-```{figure} ./figures/continuous_case_c.png
+It should be noted that we could have started by other nodes or follow a different order, leading to a different assignment of (un)conditional rank correlations in the arcs and, thus, different non-parametric Bayesian Networks. Although the final joint distribution is slightly different, differences are usually not significant.
+
+In the figure below, the assignment of (un)conditional rank correlations is shown for three different orderings. Note that even more ordering options are possible.
+
+```{figure} ../figures/rank_corr_DAG.png
 
 ---
 
 ---
-Example of a NPBN for case (c) with the two possible combinations of (un)conditional rank correlations in the arcs.
+Examples of (un)conditional rank correlations assigned to the arcs of a DAG with different orderings.
 ```
 
-When the trucks go over the bridge, the loads induced through their axles go deteriorating over time the bridge and, thus, gradually increasing the damage. The higher the axle loads, more likely to observe higher values of deterioration in the bridge. The same holds for the earthquake intensity: the higher the intensity, the more likely to observe higher values of damage in the bridge. However, the intensity of the earthquake does not have anything to do with the axle loads of the trucks. Nevertheless, if I observe a high value of damage in the bridge, this change. If I also observe a high intensity of an earthquake, it is likely that the cause of the damage is the earthquake and, thus, it is less likely to observe high values of the axle loads.
+This assignment of (conditional) rank correlations for $i=1,...,n$ results in associating a rank correlation to each arc between parent and child. The following theorem from Hanea et al. (2015)[^hanea] shows that these assignments are independent and uniquely determine the joint distribution for a particular choice of copulae.
 
-:[^pearl]: https://tudelft.on.worldcat.org/search/detail/927108286?queryString=Probabilistic%20reasoning%20in%20intelligent%20systems%3A%20networks%20of%20plausible%20inference
+:::{card} Theorem
+
+Given:
+-  a directed acyclic graph with n nodes specifying conditional independence relationships in an BN;
+-  n variables $X_1, ..., X_n$ assigned to the nodes, with invertible distribution functions $F_1, ..., F_n$;
+-  the specification (\ref{eq:correl_theorem}), $i=1,...n$, of (conditional) rank correlations on the arcs of the BN;
+-  any copula realizing all correlations [-1,1];
+-  the (conditional) independent copula realizing all (conditional) independence relationships encoded by the graph of the BN;
+
+the joint distribution of the $n$ variables is uniquely determined. This joint distribution satisfies the conditional rank correlations in the above expression are _algebraically independent_ and the characteristic factorization given by
+
+$$
+f_{1,...,n}(x_1,..., x_n) =  f_1(x_1)\prod_{i=2}^n f_{i|Pa(i)}(x_i|x_{Pa(i)})
+$$
+
+:::
+
+The fact that the rank correlations are algebraically independent is needed to guarantee that the joint distribution of the $n$ variables exists and is uniquely determined. This is, not every assignment of rank correlation matrices in the arcs leads to a valid rank correlation matrix.
+
+## It's your turn now!
+
+Assign the appropriate (un)conditional rank correlations to the DAG in the Figure below.
+
+```{figure} ../figures/non_Assigned_ranks.png
+
+---
+
+---
+Assign the appropriate correlations.
+```
+
+```{admonition} Solution
+:class: tip, dropdown
+
+Here the solution for one ordering is provided. Note that this is not the only possible solution.
+
+![solution](../figures/Assigned_ranks.png)
+
+```
+
+.
+
+[^hanea]: Hanea, A., Morales-Napoles, O., Ababei, D. (2015). Non-parametric Bayesian networks: Improving theory and reviewing applications. Reliability Engineering & System Safety 144, 265-284, https://doi.org/10.1016/j.ress.2015.07.027.
