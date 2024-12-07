@@ -10,7 +10,6 @@ def get_matrices(matrix_dir):
     # Process each CSV file in the directory
     for file in files:
         file_path = os.path.join(matrix_dir, file)
-        print(f"Loading file: {file_path}")  # Debug
         mat = np.loadtxt(file_path, dtype=int, delimiter=',')  # Load CSV as matrix
 
         # Flip the matrix along the rows (axis=0)
