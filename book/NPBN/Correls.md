@@ -5,7 +5,7 @@ Each Directed Acyclic Graph (DAG) with conditional or unconditional correlations
 
 ## Rank correlation matrix
 
-A rank correlation matrix representing a DAG with conditional or unconditional correlations is a $n \times n$ matrix, where $n$ represents the number of nodes in the DAG. Each element is a rank correlation computed between the random variables whose indexes correspond to the indexes of the rows and columns. This is, a rank correlation matrix for a 4-dimensions problem is givne by
+A rank correlation matrix representing a DAG with conditional or unconditional correlations is a $n \times n$ matrix, where $n$ represents the number of nodes in the DAG. Each element is a rank correlation computed between the random variables whose indexes correspond to the indexes of the rows and columns. This is, a rank correlation matrix for a 4-dimensions problem is given by
 
 $$
 \begin{pmatrix}
@@ -58,7 +58,7 @@ Let's see how we assign conditional and unconditional rank correlations with an 
 Example DAG to assign (un)conditional rank correlations in the arcs.
 ```
 
-Following the previous assignment rule, we start assigning $r_{34}$ ($k=0$) to the arc $3 \to 4$. Next, for $k=1$, we assign $r_{42|3}$ in the arc $2 \to 4$. Finally, for $k=3$, we assign $r_{41|3,2}$ in the arc $1 \to 4$.
+Following the previous assignment rule, we start assigning $r_{34}$ ($k=0$) to the arc $3 \to 4$. Next, for $k=1$, we assign $r_{42|3}$ in the arc $2 \to 4$. Finally, for $k=2$, we assign $r_{41|3,2}$ in the arc $1 \to 4$.
 
 It should be noted that we could have started by other nodes or follow a different order, leading to a different assignment of (un)conditional rank correlations in the arcs and, thus, different non-parametric Bayesian Networks. Although the final joint distribution is slightly different, differences are usually not significant.
 

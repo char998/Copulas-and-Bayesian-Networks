@@ -19,14 +19,14 @@ Note that since the dependence between each bivariate pair is modelled using a b
 
 ## Conditional correlation intuitively
 
-A conditional correlation is, intuitively, the correlation of two random variables $X_1$ and $X_2$ given a value of a third random variable $X_3$. Let's see it with an example. Imagine that you have taken 7 samples of water from a lake and you are investigating the relationship between the temperature of the water, the dissolved oxigen and the concentration of Chlorofill, as it is an indicator of the amount of algae. In the table below, you have the mentioned observations.
+A conditional correlation is, intuitively, the correlation of two random variables $X_1$ and $X_2$ given a value of a third random variable $X_3$. Let's see it with an example. Imagine that you have taken 7 samples of water from a lake and you are investigating the relationship between the temperature of the water, the dissolved oxygen and the concentration of Chlorophyll, as it is an indicator of the amount of algae. In the table below, you have the mentioned observations.
 
 ```{list-table}
 :header-rows: 1
 
 * - $X_1$: water temperature ($^{\circ} C$)
-  - $X_2$: Chlorofill a ($mg/m^3$)
-  - $X_3$: Dissolved oxigen ($g/m^3$)
+  - $X_2$: Chlorophyll a ($mg/m^3$)
+  - $X_3$: Dissolved oxygen ($g/m^3$)
 * - 6.1
   - 7.1
   - 10.4
@@ -51,10 +51,10 @@ A conditional correlation is, intuitively, the correlation of two random variabl
 
 ```
 
-You want to assess the influence of the dissolved oxigen into the concentration of Chlorofill a, so you compute Pearson's correlation coefficient as
+You want to assess the influence of the dissolved oxygen into the concentration of Chlorophyll a, so you compute Pearson's correlation coefficient as
 
 $$
-\rho_{23} = \frac{Cov(X_2, X_3)}{\sigma_{X_1}\sigma_{X_2}} = 0.61
+\rho_{23} = \frac{Cov(X_2, X_3)}{\sigma_{X_2}\sigma_{X_3}} = 0.61
 $$
 
 Therefore, it can be concluded that there is a positive correlation between the two random variables. This is, higher values of $X_2$ are usually associated to high values of $X_3$. 
