@@ -40,13 +40,11 @@ Each arc in the DAG is quantified through a conditional or unconditional rank co
 Consider that each node $i$ represents a variable $X_i$. $Pa(i)={i_1, ..., i_{p(i)}}$ is the set of parent nodes of the node $i$. The rank correlations associated the arcs $i_{p(i)-k} \to i$ are given by
 
 $$
-r_{i,j} = 
-\begin{cases} 
-  r_{i,i_{p(i)}} & \text{if } k=0 \\ 
-  r_{i,i_{p(i)-k} \mid i_{p(i)}, \dots, i_{p(i)}-k+1} & \text{if } 1 \leq k \leq p(i)-1 
-\end{cases}
-\tag{1} \label{eq:correl_theorem}
-$$
+    \begin{cases}
+      r_{i,i_{p(i)}} & \text{$k=0$}\\
+      r_{i,i_{p(i)-k}|i_{p(i)},...,i_{p(i)}-k+1} & \text{$1 \leq k \leq p(i)-1$}\\
+    \end{cases}       
+$$ (eq:correl_theorem)
 
 Note that ordering is not unique!
 
@@ -81,7 +79,7 @@ This assignment of (conditional) rank correlations for $i=1,...,n$ results in as
 Given:
 -  a directed acyclic graph with n nodes specifying conditional independence relationships in an BN;
 -  n variables $X_1, ..., X_n$ assigned to the nodes, with invertible distribution functions $F_1, ..., F_n$;
--  the specification (\ref{eq:correl_theorem}), $i=1,...n$, of (conditional) rank correlations on the arcs of the BN;
+-  the specification {eq}:`eq:correl_theorem`, $i=1,...n$, of (conditional) rank correlations on the arcs of the BN;
 -  any copula realizing all correlations [-1,1];
 -  the (conditional) independent copula realizing all (conditional) independence relationships encoded by the graph of the BN;
 

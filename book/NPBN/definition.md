@@ -19,7 +19,7 @@ Note that since the dependence between each bivariate pair is modelled using a b
 
 ## Conditional correlation intuitively
 
-A conditional correlation is, intuitively, the correlation of two random variables $X_1$ and $X_2$ given a value of a third random variable $X_3$. Let's see it with an example. Imagine that you have taken 7 samples of water from a lake and you are investigating the relationship between the temperature of the water, the dissolved oxygen and the concentration of Chlorophyll, as it is an indicator of the amount of algae. In the table below, you have the mentioned observations.
+To begin with the definition of conditional correlation, lets start with only three variables. One conditional correlation then is, intuitively, the correlation of two random variables $X_1$ and $X_2$ given a value of a third random variable $X_3$. Let's see it with an example. Imagine that you have taken 7 samples of water from a lake and you are investigating the relationship between the temperature of the water, the dissolved oxygen and the concentration of Chlorophyll, as it is an indicator of the amount of algae. In the table below, you have the mentioned observations.
 
 ```{list-table}
 :header-rows: 1
